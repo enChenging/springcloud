@@ -1,0 +1,14 @@
+server:
+  port: 8866
+
+#spring配置
+spring:
+  application:
+    name: springcloud-config-server
+  #连接远程仓库
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/encheng/springcloud-config.git
+          default-label: master # git仓库default-label默认值是master

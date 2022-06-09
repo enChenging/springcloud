@@ -1,0 +1,29 @@
+server:
+  port: 9527
+
+#spring配置
+spring:
+  application:
+    name: springcloud-zuul
+
+#Eureka配置，服务注册到哪里
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: zuul9527.com
+    prefer-ip-address: true #为true可以显示服务器的ip地址
+
+#actuator info配置
+info:
+  app.name: release-springcloud
+  company.name: release
+  author: release
+
+zuul:
+  routes:
+    mydept.serviceId: springcloud-provider-dept
+    mydept.path: /mydept/**
+  ignored-services: "*" #不能再使用这个路径访问了， *隐藏全部的
+  prefix: /release #设置公共的前缀
