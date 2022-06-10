@@ -5,6 +5,9 @@ server:
 spring:
   application:
     name: springcloud-config-server
+
+  config:
+    name: config-server
   #连接远程仓库
   cloud:
     config:

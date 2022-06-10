@@ -1,5 +1,7 @@
 #系统级别的配置
 spring:
+  config:
+    name: config-client
   cloud:
     config:
       name: config-client #需要从git上读取资源名称，不要后缀

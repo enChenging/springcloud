@@ -10,20 +10,20 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
     instance-id: zuul9527.com
     prefer-ip-address: true #为true可以显示服务器的ip地址
 
-#actuator info配置
-info:
-  app.name: release-springcloud
-  company.name: release
-  author: release
+
+
 
 zuul:
   routes:
-    mydept.serviceId: springcloud-provider-dept
-    mydept.path: /mydept/**
+    product-service: # 这里是路由id，可以随意取名
+      path: /mydept/** # 这里是映射路径
+      url: http://localhost:8001 # 映射路径对应的实际url地址
+      sesitiveHeaders:
   ignored-services: "*" #不能再使用这个路径访问了， *隐藏全部的
   prefix: /release #设置公共的前缀
+

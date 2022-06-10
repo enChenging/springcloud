@@ -24,7 +24,7 @@ public class DeptController {
     private DeptService deptService;
 
     @GetMapping("/dept/get/{id}")
-    @HystrixCommand(fallbackMethod = "hystrixGet")
+    @HystrixCommand(fallbackMethod = "hystrixGet")//失败之后调用备选方法
     public Dept get(@PathVariable("id") Long id){
         Dept dept = deptService.queryById(id);
         if (dept == null){

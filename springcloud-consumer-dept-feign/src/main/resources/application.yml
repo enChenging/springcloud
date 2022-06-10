@@ -16,5 +16,5 @@ eureka:
 
 # 开启服务降级feign.hystrix
 feign:
-  hystrix:
+  circuitbreaker:
     enabled: true

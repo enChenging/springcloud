@@ -7,6 +7,7 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Bean;
 
 /**
@@ -19,7 +20,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 @EnableEurekaClient //将服务注册到Eureka中
 @EnableDiscoveryClient //注册进来的微服务，获取一些消息
-@EnableCircuitBreaker //添加熔断的支持
+@EnableHystrix //添加熔断的支持
 public class DeptProviderHystrix_8001 {
     public static void main(String[] args) {
         SpringApplication.run(DeptProviderHystrix_8001.class, args);
